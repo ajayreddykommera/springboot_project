@@ -1,23 +1,27 @@
 package com.ajay.springbootproject.entity;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class Submission {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String date;
     @NotNull(message = "technology should not be empty")
-    private String technology;
+    @Enumerated(EnumType.ORDINAL)
+    private Technologies technology;
     @NotNull(message = "vendor should not be empty")
     private String vendor;
     @NotNull(message = "email should not be empty")
@@ -30,7 +34,8 @@ public class Submission {
     private String client;
     private String implementation;
     @NotNull(message = "lead should not be empty")
-    private String lead;
+    @Enumerated(EnumType.ORDINAL)
+    private Leads lead;
     @NotNull(message = "student should not be empty")
     private String student;
     @NotNull(message = "recruiter should not be empty")
