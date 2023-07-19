@@ -13,13 +13,8 @@ public class SubmissionUpdate {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "submission_id")
-    private Submission submission;
-
+    private Long submissionId;
     private String updateText;
     @Column( columnDefinition = "DATE")
-    @NotNull
     private LocalDateTime createdDate;
 }

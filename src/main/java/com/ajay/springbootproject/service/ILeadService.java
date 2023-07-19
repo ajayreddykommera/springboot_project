@@ -15,6 +15,5 @@ public interface ILeadService {
 
     String deleteLeadById(Long id);
 
-
     Lead editLead(Long id, Lead lead);
 }

@@ -22,6 +22,7 @@ public class Submission {
     private Long id;
 
     private Long consultantId;
+    private String technology;
     @Column( columnDefinition = "DATE")
     @NotNull
     private LocalDate submissionDate;
@@ -50,6 +51,6 @@ public class Submission {
 
     private String zip;
 
-    private String technology;
+
 
 }

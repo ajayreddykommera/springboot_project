@@ -18,8 +18,7 @@ public class SubmissionService implements ISubmissionService {
     @Autowired
     private SubmissionRepository submissionRepository;
 
-    @PersistenceContext
-    private EntityManager entityManager;
+
     @Override
     public List<Submission> getAllSubmissions() {
         return submissionRepository.findAll();
